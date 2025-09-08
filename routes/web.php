@@ -24,15 +24,16 @@ Route::get('/sample/{id}', [\App\Http\Controllers\Sample\IndexController::class,
 
 //Tweet
 Route::get('/tweet', \App\Http\Controllers\Tweet\IndexController::class)
-->name('tweet.index');
+    ->name('tweet.index');
 Route::post('/tweet/create' , \App\Http\Controllers\Tweet\CreatedController::class)
-->name('tweet.create');
+    ->middleware('auth')
+    ->name('tweet.create');
 Route::get('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\IndexController::class)
-->name('tweet.update.index');
+    ->name('tweet.update.index');
 Route::put('/tweet/update/{tweetId}', \App\Http\Controllers\Tweet\Update\PutController::class)
-->name('tweet.update.put');
+    ->name('tweet.update.put');
 Route::delete('/tweet/delete/{tweetId}', \App\Http\Controllers\Tweet\DeleteController::class)
-->name('tweet.delete');
+    ->name('tweet.delete');
 
 Route::get('/dashboard', function () {
     return view('dashboard');
