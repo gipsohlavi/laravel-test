@@ -7,6 +7,7 @@
         maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <title>つぶやきアプリ</title>
+    <link href="/css/app.css" rel="stylesheet">
 </head>
 <body>
     <h1>つぶやきアプリ</h1>
