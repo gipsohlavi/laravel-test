@@ -13,7 +13,7 @@
         }
     }
 @endphp
-<a hrref="{{ $href }}" class="
+<a href="{{ $href }}" class="
     inline-flex justify-center
     py-2 px-4 
     border border-transparent 

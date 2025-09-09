@@ -2,7 +2,7 @@
 <div class="p-4">
     <form action="{{ route('tweet.create') }}" method="post">
         @csrf
-        <dev class="mt-1">
+        <div class="mt-1">
             {{-- <textarea> と </textarea> の間に改行とスペースを入れない --}}
             <textarea
                 name="tweet"
