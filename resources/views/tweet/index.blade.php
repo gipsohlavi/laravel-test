@@ -32,13 +32,17 @@
         @foreach($tweet as $row)
             <details>
                 <summary>{{ $row->content }} by {{ $row->user->name }}</summary>
-                <div>
-                    <a href="{{ route('tweet.update.index', ['tweetId' => $row->id])}}">編集</a>
-                    <form action="{{ route('tweet.delete', ['tweetId' => $row->id])}}" method="post">
-                        @method('DELETE')
-                        @csrf<button type="submit">削除</button>
-                    </form>
-            </div>
+                @if(\Illuminate\Support\Facades\Auth::id() === $row->user_id)
+                    <div>
+                        <a href="{{ route('tweet.update.index', ['tweetId' => $row->id])}}">編集</a>
+                        <form action="{{ route('tweet.delete', ['tweetId' => $row->id])}}" method="post">
+                            @method('DELETE')
+                            @csrf<button type="submit">削除</button>
+                        </form>
+                    </div>
+                @else
+                    編集できません
+                @endif
             </details>
         @endforeach
     </div>
